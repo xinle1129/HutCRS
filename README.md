@@ -1,32 +1,23 @@
 # HutCRS
 
-The implementation of _Multiple Choice Questions based Multi-Interest Policy Learning for Conversational Recommendation_ (WWW 2022). 
+The implementation of _HutCRS: Hierarchical User-Interest Tracking for Conversational Recommender System_ (EMNLP 2023). 
 
-<img src="images/case.png" alt="introduction" style="zoom:50%;" />
-
-More descriptions are available via the [paper](https://arxiv.org/pdf/2112.11775.pdf).
-
-The code is partially referred to [UNICORN](https://github.com/dengyang17/unicorn) and [SCPR](https://github.com/farrecall/SCPR).
+The code is partially referred to [MCMIPL](https://github.com/ZYM6-6/MCMIPL).
 
 ## Environment Settings
-python: 3.7.9
+python: 3.9.15
 
-pytorch: 1.7.1 
+pytorch: 1.12.1 
 
-dgl: 0.6.0
+dgl: 1.0.1
 
 ## Data Preparation
-We have released the data, including lastfm_start, yelp_star,Amazon-Book and MovieLens.
-
-If you would like to use your own dataset, you can reference the following step.
-1. Put the user-item interaction data into the  fold /data/<data_name>, you can see the detail in [SCPR](https://github.com/farrecall/SCPR).
-2. Processing data: `python graph_init.py --data_name <data_name>`
-3. Use TransE [[OpenKE](https://github.com/thunlp/OpenKE)] to pretrain the graph embeddings. And put the pretrained embeddings under "/tmp/<data_name>/embeds/".
+We have released the data, including lastfm_start, yelp_star,Amazon-Book and MovieLens, which is processed in [SCPR](https://github.com/farrecall/SCPR).
 
 
 ## Training
-`python RL_model.py --data_name <data_name>`
+`python RL_model.py --data_name <data_name>  --entropy_method entropy --ask_large_fea_num 4 --choice_num 2 --classify`
 
 ## Evaluation
-`python evaluate.py --data_name <data_name> --load_rl_epoch <checkpoint_epoch>`
+`python evaluate.py --data_name <data_name> --load_rl_epoch <checkpoint_epoch> --entropy_method entropy --ask_large_fea_num 4 --choice_num 2 --classify`
 

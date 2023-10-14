@@ -12,7 +12,7 @@ pytorch: 1.12.1
 dgl: 1.0.1
 
 ## Data Preparation
-We have released the data, including lastfm_start, yelp_star,Amazon-Book and MovieLens, which is processed in [MCMIPL](https://github.com/ZYM6-6/MCMIPL)).
+We have released the data, including lastfm_start, yelp_star,Amazon-Book and MovieLens, which is processed in [MCMIPL](https://github.com/ZYM6-6/MCMIPL).
 
 
 ## Training
